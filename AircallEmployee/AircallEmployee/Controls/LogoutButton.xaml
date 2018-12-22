@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AircallEmployee.Controls.LogoutButton"
+             Spacing="0"
+             Orientation="Horizontal"
+             Margin="12">
+    <Image 
+      Source="menu_ic_logout.png"
+      WidthRequest="48"
+      HeightRequest="48"
+      Margin="0,0,14,10">
+        <Image.Source>
+            <OnPlatform x:TypeArguments="ImageSource"
+                  Android="menu_ic_logout.png"
+                  iOS="menu_ic_logout.png"/>
+        </Image.Source>
+        <Image.Margin>
+            <OnPlatform x:TypeArguments="Thickness"
+                  Android="0,0,14,10"
+                  iOS="0,0,14,10"/>
+        </Image.Margin>
+    </Image>
+    <Label
+      Text="Logout">
+        <Label.Style>
+            <OnPlatform x:TypeArguments="Style"
+                  Android="{StaticResource HeaderLabelStyle}"
+                  iOS="{StaticResource HeaderLabelStyle}"/>
+        </Label.Style>
+    </Label>
+</StackLayout>

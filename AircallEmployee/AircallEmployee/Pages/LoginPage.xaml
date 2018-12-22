@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             x:Class="AircallEmployee.Pages.LoginPage">
+    
+    <ContentPage.Content>
+
+        <StackLayout Padding="30"  HorizontalOptions="Center" VerticalOptions="Center" >
+            <Image Source="lg_backgound_640.png"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+            <input:FormView IsValidated="{Binding IsValidated}" Spacing="30">
+                <input:AdvancedEntry 
+                    Text="{Binding Email.Value}"
+                    IsRequired="True"
+                    Annotation="Email"
+                    Placeholder="sample@domain.com"
+                    AnnotationColor="Accent"
+                    IconImage="ic_email_black_24dp.png"
+                    MinLength="10"
+                    MaxLength="50"
+                    />
+                <input:AdvancedEntry 
+                    Text="{Binding Password.Value}"
+                    IsRequired="True"
+                    Annotation="Password"
+                    Placeholder="password"
+                    AnnotationColor="Accent"
+                    IconImage="ic_password_black_24dp.png"
+                    MinLength="5"
+                    MaxLength="30"
+                    />
+                <input:CheckBox Text="Save Password" Type="Check" Color="Accent" TextColor="Accent"/>
+                <Label Text="Forgot Password?" HorizontalOptions ="End" TextColor="Accent" FontSize="Small">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding TapFotgotPwdLblCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Button Command="{Binding SubmitCommand}" Text="Login" BackgroundColor="Accent" CornerRadius="20" TextColor="White"  IsEnabled="{Binding IsValidated}"/>
+            </input:FormView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
