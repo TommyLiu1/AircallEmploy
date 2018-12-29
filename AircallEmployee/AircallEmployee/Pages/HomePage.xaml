@@ -2,21 +2,69 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar"
+             Title="Schedule"
              x:Class="AircallEmployee.Pages.HomePage">
+
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem 
+            x:Name="ScheduleNotification"
+            Command="{Binding ShowNoticeCommand}">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource"
+                            Android="notification_icon_bar.png"
+                            iOS="notification_icon_bar.png"/>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+
+        <ToolbarItem 
+            x:Name="ShceduleViewSettings"
+            Command="{Binding SetScheduleViewCommand}">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource"
+                            Android="setting_icon_bar.png"
+                            iOS="setting_icon_bar.png"/>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+
+        <ToolbarItem 
+            x:Name="AddNewSchedule"
+            Command="{Binding AddNewScheduleCommand}">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource"
+                            Android="plus_icon_bar.png"
+                            iOS="plus_icon_bar.png"/>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <controls:Calendar 
-			Padding="10,0,10,0" 
-			SelectedBorderWidth="4" 
-			DisabledBorderColor="Black"
-			ShowNumberOfWeek="False"
-			StartDay="Monday"
-			TitleLabelTextColor="Purple"
-			TitleLeftArrowTextColor="Blue"
-            TitleRightArrowTextColor="Blue"
-			SelectedDate="{Binding Date}"
-			SpecialDates="{Binding Attendances}"
-			DateCommand="{Binding DateChosen}" >
+			            x:Name="Calendar"
+                        SelectedDates="{Binding Dates, Mode=TwoWay}"
+                        StartDay="Sunday" 
+                        DatesFontSize="12"
+                        SelectedFontSize="12"
+                        WeekdaysFontSize="12"
+                        TitleLabelFontSize="20"
+                        SelectedBorderWidth="2"
+                        BorderWidth="0"
+                        DisabledFontSize="12"
+                        DisabledBorderWidth="6"
+                        EnableTitleMonthYearView="True"
+                        WeekdaysShow="True"
+                        WeekdaysFontAttributes="Bold"
+                        DisabledBorderColor="{StaticResource WhiteColor}"
+                        DisabledBackgroundColor="{StaticResource WhiteColor}"
+                        BorderColor="{StaticResource WhiteColor}"
+                        DatesBackgroundColor="{StaticResource WhiteColor}"
+                        TitleLeftArrowTextColor="{StaticResource DarkGrayColor}"
+                        TitleRightArrowTextColor="{StaticResource DarkGrayColor}"
+                        SelectedTextColor="{StaticResource SelectedDateColor}"
+                        SelectedBorderColor="{StaticResource WhiteColor}"
+                        DateCommand="{Binding SelectedDateCommand}"
+                        HorizontalOptions="Center" >
             </controls:Calendar>
         </StackLayout>
     </ContentPage.Content>

@@ -6,5 +6,6 @@ namespace AircallEmployee.Servives.Interfaces
     {
         Task ShowAlertAsync(string message, string title, string buttonLabel);
         Task ShowPromptAsync(string message, string title, string OKbuttonLabel,string CancelbuttonLabel);
+        void ShowActionSheetAsync(string title, string CancelbuttonLabel, string[] destructive);
     }
 }

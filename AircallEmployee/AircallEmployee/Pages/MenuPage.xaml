@@ -13,18 +13,20 @@
                    TargetType="{x:Type Label}"
                    BasedOn="{StaticResource MontserratRegularLabelStyle}">
             <Setter Property="TextColor"
-                    Value="{StaticResource WhiteColor}" />
+                    Value="{StaticResource BlackColor}" />
             <Setter Property="FontSize"
                     Value="{StaticResource BigSize}" />
+            <Setter Property="Opacity"
+                        Value="0.87" />
         </Style>
 
         <Style x:Key="MenuItemLabelStyle"
                    TargetType="{x:Type Label}"
                    BasedOn="{StaticResource MontserratRegularLabelStyle}">
             <Setter Property="TextColor"
-                        Value="{StaticResource WhiteColor}" />
+                        Value="{StaticResource BlackColor}" />
             <Setter Property="FontSize"
-                        Value="{StaticResource BigSize}" />
+                        Value="{StaticResource ExtraBigSize}" />
             <Setter Property="Opacity"
                         Value="0.87" />
           </Style>
@@ -64,10 +66,16 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
             <!-- MOBILE PROFILE -->
             <Grid
                 Grid.Row="0">
@@ -81,7 +89,7 @@
                     HeightRequest="64"
                     Margin="16,25,16,20"
                     BorderColor="#00000000"
-                    ProfileImage="{Binding Profile.PhotoUrl}"
+                    ProfileImage="profile_placeholder.png"
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="CenterAndExpand" />
                 <StackLayout 
@@ -90,7 +98,7 @@
                     Orientation="Horizontal"
                     VerticalOptions="CenterAndExpand">
                     <Label 
-                        Text="{Binding ProfileFullName}"
+                        Text="herru batter"
                         Style="{StaticResource ProfileNameLabelStyle}" />
                 </StackLayout>
             </Grid>
@@ -124,8 +132,8 @@
                                 <StackLayout.Margin>
                                     <OnPlatform  
                                         x:TypeArguments="Thickness"
-                                        Android="38, 9, 0, 0"
-                                        iOS="38, 9, 0, 0"/>
+                                        Android="20, 25, 0, 0"
+                                        iOS="20, 25, 0, 0"/>
                                 </StackLayout.Margin>
                                 <StackLayout.Triggers>
                                     <DataTrigger
@@ -139,8 +147,8 @@
                                 <Image 
                                     Source="{Binding MenuItemType, Converter={StaticResource MenuItemTypeConverter}}"
                                     Aspect="AspectFit"
-                                    WidthRequest="40"
-                                    HeightRequest="40"
+                                    WidthRequest="30"
+                                    HeightRequest="30"
                                     HorizontalOptions="Center"
                                     VerticalOptions="Center" />
                                 <Label 
@@ -185,6 +193,5 @@
                 </controls:LogoutButton.Margin>
             </controls:LogoutButton>
         </Grid>
-       
     </Grid>
 </ContentPage>

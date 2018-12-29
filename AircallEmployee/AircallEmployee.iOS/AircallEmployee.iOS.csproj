@@ -273,4 +273,19 @@
   <ItemGroup>
     <BundleResource Include="Resources\menu_ic_unit.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\profile_camera_overlay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\plus_icon_bar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\setting_icon_bar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\notification_icon_bar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\check_box_check.png" />
+  </ItemGroup>
 </Project>

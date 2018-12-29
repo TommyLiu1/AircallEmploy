@@ -14,6 +14,19 @@ namespace AircallEmployee.Servives
         public Task ShowPromptAsync(string message, string title, string OKbuttonLabel, string CancelbuttonLabel)
         {
             return UserDialogs.Instance.PromptAsync(message, title, OKbuttonLabel, CancelbuttonLabel);
+            
+        }
+
+        public void ShowActionSheetAsync(string title, string CancelbuttonLabel, string[] items)
+        {
+            ActionSheetConfig cfg = new ActionSheetConfig();
+            foreach(string item in items)
+            {
+                cfg.Add(item);
+            }
+            cfg.SetTitle(title);
+            UserDialogs.Instance.ActionSheet(cfg);
+           
         }
     }
 }

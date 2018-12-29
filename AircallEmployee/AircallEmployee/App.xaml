@@ -20,6 +20,9 @@
             <Color x:Key="ProfileGrayColor">#afb3be</Color>
             <Color x:Key="BlackColor">#000000</Color>
             <Color x:Key="GreenColor">#0aca91</Color>
+            <Color x:Key="DarkGrayColor">#ADADAD</Color>
+            <Color x:Key="LightOrangeColor">#D87E56</Color>
+            <Color x:Key="SelectedDateColor">#48989D</Color>
 
             <!-- Fonts -->
             <OnPlatform x:Key="MontserratRegular"
@@ -137,7 +140,9 @@
                         Value="{StaticResource BlackColor}" />
             <Setter Property="FontSize"
                         Value="{StaticResource MidMediumSize}" />
-        </Style>
+           <Setter Property="Opacity"
+                        Value="0.87" />
+            </Style>
        </ResourceDictionary>
 
     </Application.Resources>

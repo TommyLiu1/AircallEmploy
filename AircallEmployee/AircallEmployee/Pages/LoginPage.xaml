@@ -6,17 +6,17 @@
     
     <ContentPage.Content>
 
-        <StackLayout Padding="30"  HorizontalOptions="Center" VerticalOptions="Center" >
-            <Image Source="lg_backgound_640.png"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-
-            <input:FormView IsValidated="{Binding IsValidated}" Spacing="30">
+        <StackLayout  HorizontalOptions="Center" VerticalOptions="Center" >
+            <Image Source="lg_backgound_640.png"  HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"/>
+            <input:FormView IsValidated="{Binding IsValidated}" Spacing="20" Margin="20,0,20,0">
                 <input:AdvancedEntry 
                     Text="{Binding Email.Value}"
                     IsRequired="True"
                     Annotation="Email"
                     Placeholder="sample@domain.com"
-                    AnnotationColor="Accent"
+                    AnnotationColor="blue"
                     IconImage="ic_email_black_24dp.png"
+                    IconColor="Blue"
                     MinLength="10"
                     MaxLength="50"
                     />
@@ -25,19 +25,20 @@
                     IsRequired="True"
                     Annotation="Password"
                     Placeholder="password"
-                    AnnotationColor="Accent"
+                    IconColor="Blue"
+                    AnnotationColor="Blue"
                     IconImage="ic_password_black_24dp.png"
                     MinLength="5"
                     MaxLength="30"
                     />
-                <input:CheckBox Text="Save Password" Type="Check" Color="Accent" TextColor="Accent"/>
-                <Label Text="Forgot Password?" HorizontalOptions ="End" TextColor="Accent" FontSize="Small">
+                <input:CheckBox Text="Save Password" Type="Check" Color="blue" TextColor="blue"/>
+                <Label Text="Forgot Password?" HorizontalOptions ="End" TextColor="blue" FontSize="Small">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding TapFotgotPwdLblCommand}"/>
                     </Label.GestureRecognizers>
                 </Label>
 
-                <Button Command="{Binding SubmitCommand}" Text="Login" BackgroundColor="Accent" CornerRadius="20" TextColor="White"  IsEnabled="{Binding IsValidated}"/>
+                <Button Command="{Binding SubmitCommand}" Text="Login" BackgroundColor="blue" CornerRadius="20" TextColor="White"  IsEnabled="{Binding IsValidated}"/>
             </input:FormView>
         </StackLayout>
     </ContentPage.Content>

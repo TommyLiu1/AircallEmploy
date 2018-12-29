@@ -1,11 +1,17 @@
 ﻿using AircallEmployee.PageModels.Base;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace AircallEmployee.PageModels
 {
-    class HomePageModel : PageModelBase
+    public class HomePageModel : PageModelBase
     {
+        public ICommand SetScheduleViewCommand => new Command(SetScheduleView);
+
+        private  void SetScheduleView()
+        {
+            string[] items = { "week", "month,today" };
+             DialogService.ShowActionSheetAsync("Schedule View", "cacel", items);
+        }
     }
 }
