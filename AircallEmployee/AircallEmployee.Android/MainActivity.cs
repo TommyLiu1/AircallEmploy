@@ -4,6 +4,8 @@ using Android.Content.PM;
 using Android.OS;
 using Acr.UserDialogs;
 using FFImageLoading.Forms.Droid;
+using AircallEmployee.Utils;
+using System;
 
 namespace AircallEmployee.Droid
 {
@@ -22,6 +24,21 @@ namespace AircallEmployee.Droid
             XamForms.Controls.Droid.Calendar.Init();
             CachedImageRenderer.Init(true);
             LoadApplication(new App());
+
+            SessionManager.Instance.SessionDuration = TimeSpan.FromMinutes(5);
+            SessionManager.Instance.OnSessionExpired = HandleSessionExpired;
+        }
+
+        async void HandleSessionExpired(object sender, EventArgs e)
+        {
+            
+        }
+
+        public override void OnUserInteraction()
+        {
+            base.OnUserInteraction();
+
+            SessionManager.Instance.ExtendSession();
         }
     }
 }
